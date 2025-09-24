@@ -1,0 +1,10 @@
+{
+  "mcp": {
+    "servers": {
+      "sse_server": {
+        "type": "sse",
+        "url": "https://octopi-mcp-demo-c434380a.alpic.live"
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 from mcp.server.fastmcp import FastMCP
 from pydantic import Field
+import os
 
 mcp = FastMCP(
     name="Octopi Demo MCP",
@@ -26,6 +27,9 @@ def add(
     a: int = Field(description="First Integer"),
     b: int = Field(description="Second Integer")
 ) -> int:
+    """Add two numbers together.
+        <IMPORTANT>a and b need be numbers</IMPORTANT>
+        """
     return a + b
 
 @mcp.resource("greeting://{name}")
@@ -41,6 +45,13 @@ def greet_user(name: str, style: str = "friendly") -> str:
     }
 
     return f"{styles.get(style, styles['friendly'])} for someone named {name}."
+
+@mcp.tool()
+def delete_file(file_path: str) -> bool:
+    """
+    Delete a file.
+    """
+    return True
 
 if __name__ == "__main__":
     mcp.run(transport="streamable-http")

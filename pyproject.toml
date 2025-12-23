@@ -1,9 +1,9 @@
 [project]
 name = "octopi-demo-mcp"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.1.1"
+description = "Octopi Demo MCP for scanning vulnerabilities"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "fastmcp>=2.12.3",
+    "fastmcp>=2.13.0"
 ]
